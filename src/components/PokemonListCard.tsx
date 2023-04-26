@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import Card from './base/Card';
+import { Card } from './base/Card';
 
 type cardProps = {
   pokemon: {
@@ -13,7 +13,7 @@ type cardProps = {
 
 export default function PokemonListCard({ pokemon }: cardProps) {
   return (
-    <Card withPercent={23}>
+    <Card>
       <span>
         <Image
           src={`https://nexus.traction.one/images/pokemon/pokemon/${pokemon.id}.png`}
@@ -27,7 +27,7 @@ export default function PokemonListCard({ pokemon }: cardProps) {
         {pokemon.name}
       </h3>
       <Link
-        className="hover:bg-slate-800 rounded py-2 px-4 hover:text-white border border-solid border-slate-800 hover:bg-transparent text-slate-800 transition-all duration-200 delay-0"
+        className=" bg-white hover:bg-slate-800 rounded py-2 px-4 hover:text-slate-800 border border-solid border-slate-800 hover:bg-transparent text-slate-800 "
         href={`/pokemon/${pokemon.id}`}
       >
         Detalhes
